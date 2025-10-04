@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace ApiCatalogo.Models;
 
@@ -11,7 +12,13 @@ public class Categoria
     }
 
     public int CategoriaId { get; set; }
+
+    [Required]
+    [StringLength(80)]
     public string? NomeCategoria { get; set; }
+
+    [Required]
+    [StringLength(300)]
     public string? ImagemUrl { get; set; }
 
     //Propriedade de navegação para indicar que Categoria pode conter uma coleção de Produtos - Relacionamento 1 para Muitos
